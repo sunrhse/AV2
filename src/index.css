@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700');
+
+@import "tailwindcss";
+
+:root {
+  --blue-50:  #f0f5ff;
+  --blue-100: #dce8ff;
+  --blue-200: #b8ccf0;
+  --blue-300: #8BAAD5;
+  --blue-400: #5f87c2;
+  --blue-500: #3F5A80;
+  --blue-600: #2e4470;
+  --blue-700: #1e2f55;
+  --blue-800: #131f3a;
+
+  --glass-white: rgba(255,255,255,0.72);
+  --glass-border: rgba(139,170,213,0.25);
+  --glass-shadow: 0 4px 24px rgba(63,90,128,0.10);
+  --glass-shadow-lg: 0 12px 48px rgba(63,90,128,0.16);
+
+  --bg-mesh: linear-gradient(135deg, #f0f5ff 0%, #e8effc 40%, #f5f0ff 70%, #eef4ff 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--bg-mesh);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--blue-700);
+}
+
+.fglass {
+  background: var(--glass-white);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--blue-200); border-radius: 99px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease both; }
